@@ -1,0 +1,25 @@
+Create a new React app using Typescript by running npx create-react-app my-app --template typescript in your terminal.
+
+Install any additional dependencies you need. You will need to install axios to make API requests and react-icons for icon components. You can install these by running npm install axios react-icons.
+
+Create a new component called SearchBar that will be responsible for rendering the search bar and handling search queries. The component should have an input field and a button that triggers an API request when clicked.
+
+Create a new component called CountryList that will be responsible for rendering the list of countries returned from the API. This component should receive the country data as a prop and map over it to create a list of clickable country names.
+
+Create a new component called CountryDetails that will be responsible for rendering the details of the selected country. This component should receive the selected country data as a prop and display the relevant information.
+
+Create a new component called Wishlist that will be responsible for rendering the list of countries added to the user's wishlist. This component should receive the list of wishlist countries as a prop and map over it to create a list of clickable country names.
+
+Create a new component called App that will be the main component of your app. This component should handle the state of the app, including the search query, the list of countries returned from the API, the selected country, and the list of wishlist countries. The component should render the SearchBar, CountryList, CountryDetails, and Wishlist components and pass the relevant data and functions as props.
+
+Inside the App component, create a function called handleSearch that will make an API request to the restcountries API using axios and update the state of the app with the list of countries returned. This function should be passed as a prop to the SearchBar component and called when the search button is clicked.
+
+Create a function called handleSelectCountry inside the App component that will update the state of the app with the selected country data. This function should be passed as a prop to the CountryList component and called when a country name is clicked.
+
+Create a function called handleAddToWishlist inside the App component that will update the state of the app with the selected country added to the user's wishlist. This function should be passed as a prop to the CountryDetails component and called when the user clicks the "Add to Wishlist" button.
+
+Pass the relevant state and functions as props to the different components and render them in the App component. You can use conditional rendering to display the CountryDetails and Wishlist components only when the user selects a country and adds it to their wishlist, respectively.
+
+Style your app using CSS or a styling library like styled-components.
+
+These steps should help you get started with building your React Typescript app that pulls data from the restcountries API and allows users to search for and add countries to their wishlist.
