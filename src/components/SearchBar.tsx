@@ -1,27 +1,84 @@
 import { useState, useEffect } from "react";
+import "./searchbar.css";
 import axios from "axios";
+import { Country } from '../types';
+import CountryList from "./CountryList";
+import CountryDetails from "./CountryDetails";
+
 
 function SearchBar() {
-  const [search, setSearch] = useState([]);
+  const [search, setSearch] = useState("");
+  const [input, setInput] = useState("");
+  const [suggestions, setSuggestions]= useState<Country[]>([]);
+  const [selectedCountry, setSelectedCountry] = useState<Country[]>([]);
+  const [buttonClicked, setButtonClicked] = useState(false);
 
   useEffect(() => {
     const fetchCountry = async () => {
       try {
-        const response = await axios.get(`https://restcountries.com/v3.1/all`);
-        console.log(response.data);
-        return response.data;
+        if (!buttonClicked && search == "") {
+          return;
+        }
+        const response = await axios.get(
+          `https://restcountries.com/v3.1/name/${search}`
+        );
+        console.log("Response", response.data);
+        setSelectedCountry(response.data);
+        // return response.data;
       } catch (error) {
         console.error(error);
       }
     };
     fetchCountry();
-  }, [search]);
+  }, [search, buttonClicked, suggestions]);
+
+  const onChangeHandler = (search: string) => {
+    let matches: Country[] = []
+    if(search.length > 0) {
+      matches = selectedCountry.filter((country) => {
+        const regex = new RegExp(`${search}`, "gi");
+        return country.name.common.match(regex);
+      });
+    }
+    console.log(matches);
+    setInput(search)
+    setSuggestions(matches);
+    setSearch(search);
+    setButtonClicked(false);
+  }
+
+  function handleClick(e: any) {
+    e.preventDefault();
+    const inputValue = (document.getElementById(
+      "countryInput"
+    ) as HTMLInputElement).value;
+    if(selectedCountry.length > 0) {
+      setSearch(inputValue);
+    }
+    setButtonClicked(true);
+  }
+
+  console.log("Button true or false", buttonClicked);
 
   return (
-    <div>
-      <input value="" type="text" />
-      <button type="submit">Search</button>
-    </div>
+    <>
+      <input
+        id="countryInput"
+        value={input}
+        onChange={e => onChangeHandler(e.target.value)}
+        type="text"
+      />
+      
+      <button onClick={handleClick} type="submit">
+        Search
+      </button>
+
+      <CountryList countries={selectedCountry} />
+
+      {buttonClicked && selectedCountry.length > 0 ? (
+        <CountryDetails details={selectedCountry} />
+      ) : null}
+    </>
   );
 }
 

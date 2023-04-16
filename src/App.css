@@ -1,0 +1,17 @@
+.App {
+  background-color: #FF9E00;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+}
+
+.left-box {
+  color: #191923;
+  padding: 30px;
+  width: 40%;
+  background-color: #e68e00;
+  border: 12px solid #FBFEF9;
+  border-radius: 25px;
+}

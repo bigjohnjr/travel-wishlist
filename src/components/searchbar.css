@@ -1,0 +1,50 @@
+.country-data-wrapper {
+  margin-top: 4vh;
+}
+
+.country-data-wrapper .country-data__name {
+  font-size: 3.5rem;
+  margin-bottom: 25px;
+  color:#191923;
+}
+
+.country-data-wrapper .country-data__main-details {
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 15px;
+  display: flex;
+}
+
+.country-data-wrapper .country-data__capital {
+  margin-right: 6rem;
+}
+
+.country-data-wrapper li {
+  font-size: 1.9rem;
+}
+
+.country-data-wrapper img {
+  width: 35%;
+  margin-bottom: 2rem;
+}
+
+input#countryInput {
+    width: 200px;
+    height: 30px;
+    padding: 5px 9px;
+    font-size: 20px;
+}
+
+button {
+  font-size: 2rem;
+  width: 100px;
+  height: 44px;
+  padding: 5px 0;
+}
+
+.dropdown-option {
+  background-color: #ffffff;
+  padding: 3px 6px;
+  cursor: pointer;
+  border-bottom: 1px solid #e7e7e7;
+}
