@@ -1,5 +1,5 @@
 .App {
-  background-color: #FF9E00;
+  background-color: #ff9e00;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -12,6 +12,15 @@
   padding: 30px;
   width: 40%;
   background-color: #e68e00;
-  border: 12px solid #FBFEF9;
+  border: 12px solid #fbfef9;
+  border-radius: 25px;
+}
+
+.right-box {
+  color: #191923;
+  padding: 30px;
+  width: 8%;
+  background-color: #e68e00;
+  border: 12px solid #fbfef9;
   border-radius: 25px;
 }

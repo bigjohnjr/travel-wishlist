@@ -1,0 +1,8 @@
+#wishListButton {
+  width: 50%;
+  background-color: aqua;
+  border: none;
+  color: black;
+  margin-top: 20px;
+  border-radius: 10px;
+}
