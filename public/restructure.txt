@@ -1,0 +1,18 @@
+1. First, identify which states and functions are necessary for the App component, and which of them can be passed down to the child components.
+
+2. Create state variables in the App component for: search query, list of countries returned from the API, selected country, and the list of wishlist countries.
+
+3. Create the following functions in the App component:
+
+4. handleSearch: It should make an API request using axios and update the state with the list of countries returned. Pass this function to the SearchBar component.
+handleSelectCountry: It should update the state with the selected country data. Pass this function to the CountryList component.
+handleAddToWishlist: It should update the state with the selected country added to the wishlist. Pass this function to the CountryDetails component.
+Render the SearchBar, CountryList, CountryDetails, and WishList components inside the App component. Ensure you pass the necessary state variables and functions as props to these components.
+
+5. In the SearchBar component, use the handleSearch function passed as a prop to make an API request when the search button is clicked. You may need to modify the SearchBar component to use the passed function instead of making the API request directly.
+
+6. In the CountryList component, when a country is clicked, call the handleSelectCountry function passed as a prop to update the selected country in the App component. You might need to modify the CountryList component to accept and use this function.
+
+7. In the CountryDetails component, when the "Add to Wishlist" button is clicked, call the handleAddToWishlist function passed as a prop to update the wishlist in the App component. Make sure to use the passed function in the CountryDetails component.
+
+8. Use conditional rendering to display the CountryDetails and Wishlist components only when appropriate. For example, show the CountryDetails component only when a country is selected, and show the Wishlist component only when there are countries in the wishlist.
