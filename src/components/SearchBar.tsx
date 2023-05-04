@@ -1,22 +1,21 @@
 import { useState } from "react";
 import "./searchbar.css";
 import { Country } from "../types";
-import WishList from "./WishList";
 
 interface SearchBarProps {
-  // updateWishList: (updateFn: (currentWishList: Country[]) => Country[]) => void;
   onSearch: (searchQuery: string) => Promise<void>;
   setButtonClicked: (clicked: boolean) => void;
+  input: string;
+  setInput: (value: string) => void;
 }
 
-function SearchBar({ onSearch, setButtonClicked }: SearchBarProps) {
-  const [search, setSearch] = useState("");
-  const [input, setInput] = useState("");
+function SearchBar({
+  onSearch,
+  setButtonClicked,
+  input,
+  setInput,
+}: SearchBarProps) {
   const [suggestions, setSuggestions] = useState<Country[]>([]);
-
-  // const addToWishList = (country: Country) => {
-  //   updateWishList((currentWishList) => [...currentWishList, country]);
-  // };
 
   const onChangeHandler = (search: string) => {
     setInput(search);
@@ -53,15 +52,6 @@ function SearchBar({ onSearch, setButtonClicked }: SearchBarProps) {
       <button onClick={handleClick} type="submit">
         Search
       </button>
-
-      {/* <CountryList countries={selectedCountry} />
-
-      {buttonClicked && selectedCountry.length > 0 ? (
-        <CountryDetails
-          onAddToWishList={addToWishList}
-          details={selectedCountry}
-        />
-      ) : null} */}
     </>
   );
 }

@@ -5,4 +5,28 @@
   color: black;
   margin-top: 20px;
   border-radius: 10px;
+  cursor: pointer;
+}
+
+.wishlist h2 {
+  margin-bottom: 10px;
+}
+
+.wishlist img {
+  width: 100%;
+  margin-top: 5px;
+}
+
+.wishlist ul {
+  list-style: none;
+}
+
+.wishlist ul li {
+  margin-bottom: 10px;
+}
+
+.pagination-btn {
+  width: 40px;
+  height: 35px;
+  cursor: pointer;
 }

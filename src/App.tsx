@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import SearchBar from "./components/SearchBar";
 import WishList from "./components/WishList";
 import CountryList from "./components/CountryList";
@@ -8,6 +8,7 @@ import axios from "axios";
 import "./App.css";
 
 function App() {
+  const [input, setInput] = useState("");
   const [wishList, setWishList] = useState<Country[]>([]);
   const [selectedCountry, setSelectedCountry] = useState<Country[]>([]);
   const [buttonClicked, setButtonClicked] = useState(false);
@@ -15,7 +16,7 @@ function App() {
   // search query
   const handleSearch = async (searchQuery: string) => {
     try {
-      if (searchQuery == "") {
+      if (searchQuery === "") {
         return;
       }
       const response = await axios.get(
@@ -32,19 +33,33 @@ function App() {
     setSelectedCountry([country]);
   };
 
+  const handleSuggestionClick = (country: Country) => {
+    setSelectedCountry([country]);
+  };
+
+  const addToWishList = (country: Country) => {
+    setWishList((currentWishList) => [...currentWishList, country]);
+  };
+
   return (
     <div className="App">
       <div className="left-box">
         <SearchBar
           onSearch={handleSearch}
           setButtonClicked={setButtonClicked}
+          input={input}
+          setInput={setInput}
         />
         <CountryList
           countries={selectedCountry}
           onCountrySelect={handleSelectCountry}
+          setInput={setInput}
         />
         {buttonClicked && selectedCountry.length > 0 ? (
-          <CountryDetails details={selectedCountry} />
+          <CountryDetails
+            onAddToWishList={addToWishList}
+            details={selectedCountry}
+          />
         ) : null}
       </div>
       <div className="right-box">

@@ -1,18 +1,20 @@
-import { useState, useEffect } from "react";
 import { Country } from "../types";
 import "./countrydetails.css";
 
 interface CountryDetailsProps {
   details: Country[];
-  // onAddToWishList: (country: Country) => void;
+  onAddToWishList: (country: Country) => void;
 }
 
-const CountryDetails: React.FC<CountryDetailsProps> = ({ details }) => {
+const CountryDetails: React.FC<CountryDetailsProps> = ({
+  details,
+  onAddToWishList,
+}) => {
   const countrydetails = details.map((detail) => {
-    // const handleClick = (e: any, country: Country) => {
-    //   e.preventDefault();
-    //   onAddToWishList(country);
-    // };
+    const handleClick = (e: any, country: Country) => {
+      e.preventDefault();
+      onAddToWishList(country);
+    };
     return (
       <div className="country-data-wrapper">
         <h2 className="country-data__name">{detail.name.common}</h2>
@@ -40,9 +42,9 @@ const CountryDetails: React.FC<CountryDetailsProps> = ({ details }) => {
             <span className="strong">Population:</span> {detail.population}
           </li>
         </ul>
-        {/* <button onClick={(e) => handleClick(e, detail)} id="wishListButton">
+        <button onClick={(e) => handleClick(e, detail)} id="wishListButton">
           Add to Wishlist
-        </button> */}
+        </button>
       </div>
     );
   });
