@@ -1,6 +1,4 @@
-import { useState } from "react";
 import "./searchbar.css";
-import { Country } from "../types";
 
 interface SearchBarProps {
   onSearch: (searchQuery: string) => Promise<void>;
@@ -15,16 +13,12 @@ function SearchBar({
   input,
   setInput,
 }: SearchBarProps) {
-  const [suggestions, setSuggestions] = useState<Country[]>([]);
-
   const onChangeHandler = (search: string) => {
     setInput(search);
     setButtonClicked(false);
 
     if (search.length > 0) {
       onSearch(search);
-    } else {
-      setSuggestions([]);
     }
   };
 

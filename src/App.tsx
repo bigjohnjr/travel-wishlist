@@ -33,10 +33,6 @@ function App() {
     setSelectedCountry([country]);
   };
 
-  const handleSuggestionClick = (country: Country) => {
-    setSelectedCountry([country]);
-  };
-
   const addToWishList = (country: Country) => {
     setWishList((currentWishList) => [...currentWishList, country]);
   };
