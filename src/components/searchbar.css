@@ -5,7 +5,7 @@
 .country-data-wrapper .country-data__name {
   font-size: 3.5rem;
   margin-bottom: 25px;
-  color:#191923;
+  color: #000000;
 }
 
 .country-data-wrapper .country-data__main-details {
@@ -29,10 +29,10 @@
 }
 
 input#countryInput {
-    width: 200px;
-    height: 30px;
-    padding: 5px 9px;
-    font-size: 20px;
+  width: 200px;
+  height: 30px;
+  padding: 5px 9px;
+  font-size: 20px;
 }
 
 button {

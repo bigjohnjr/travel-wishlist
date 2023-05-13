@@ -1,5 +1,11 @@
+:root {
+  --primary-color: #0c21c4;
+  --secondary-color: #0d9938;
+  --tertiary-color: #c92017;
+}
+
 .App {
-  background-color: #ff9e00;
+  background-color: #ffffff;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -13,25 +19,25 @@
 }
 
 .left-box {
-  color: #191923;
+  color: #000000;
   padding: 30px;
   width: 40%;
-  background-color: #e68e00;
-  border-top: 12px solid #fbfef9;
-  border-left: 12px solid #fbfef9;
-  border-bottom: 12px solid #fbfef9;
-  border-right: 6px solid #fbfef9;
+  background-color: #e7eafd;
+  border-top: 12px solid var(--primary-color);
+  border-left: 12px solid var(--primary-color);
+  border-bottom: 12px solid var(--primary-color);
+  border-right: 6px solid var(--primary-color);
   border-radius: 15px;
 }
 
 .right-box {
-  color: #191923;
+  color: #000000;
   padding: 30px;
   width: 8%;
-  background-color: #e68e00;
-  border-top: 12px solid #fbfef9;
-  border-left: 6px solid #fbfef9;
-  border-bottom: 12px solid #fbfef9;
-  border-right: 12px solid #fbfef9;
+  background-color: #e7eafd;
+  border-top: 12px solid var(--primary-color);
+  border-left: 6px solid var(--primary-color);
+  border-bottom: 12px solid var(--primary-color);
+  border-right: 12px solid var(--primary-color);
   border-radius: 15px;
 }

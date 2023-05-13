@@ -21,7 +21,7 @@ function WishList({ wishList }: WishListProps) {
 
   return (
     <div className="wishlist">
-      <h2>WishList</h2>
+      <h2>Wish List</h2>
       <ul>
         {wishList.map((country) => (
           <li>
